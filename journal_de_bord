@@ -1,0 +1,51 @@
+Programmation et projet encadré
+
+#exercice/actions
+?? question
+!! remarque
+
+COURS D'INTRODUCTION
+
+1 - linux => tout est fichier et donc manipulable
+    -> importance d'être organisé sur sa machine pour éviter un bazar absolu et des difficultés de manipulation : garder une arborescence propre.
+2 - chemin absolu vers un fichier (chemin depuis /root)
+vs chemin relatif (chemin depuis autre répertoire que /root : /home, ~/, répertoire courant etc...)
+3 - Dossier > fichier
+4 - commandes principales de navigation (voir slides 00-Shell)
+5 - présentation de git (gestion de versions : permet de conserver les différentes versions d'un projet)
+
+#exercice de tri de fichier par ligne de commande. Utilisation de mkdir, mv, et de la wildcard *
+
+?? est-il possible d'automatiser le procédé en créant une boucle pour éviter de devoir modifier systématiquement un caractère avant de pouvoir bouger les fichiers (01,02,03...) ??
+
+
+SEMAINE 2 : UTILISER GIT
+
+1 - création d'un jeu de clé de sécurité ssh encodage ed25519
+    - une clé publique (signature des actions publiques)
+    - une clé personnelle (non communiquée avec l'exterieur, sécurisation des données lors des échanges avec git)
+    - un code est joint est est demandé par git avant les manipulations qui modifient le répertoire
+2 - syntaxe des commandes git : git <sous commande> [-options...] [arguments...]
+3 - clonage du git du cours sur la machine afin de pouvoir récupérer les différents contenus via git
+4 - mise à jour de la version locale à partir de la version en ligne :
+    - git fetch (cherche le log pour répertorier les changements)
+    - git pull (récupère les changements vers le répertoire local)
+5 - ajout de fichier local sur la version en ligne :
+    - git add (fichier à uploader)
+    - git commit [-m message] (regroupement des derniers add)
+    - git push (upload des changement indiqués par le dernier commit)
+6 - ajout de tag (mettre en avant certains commits pour indiquer une étape importante)
+    - git tag [-a] [-m message] <tagname> [commit]
+    [-a] ajout d'un message
+    [commit] indique le commit à tagger (sinon, dernioer commit)
+!! espace non accepté dans le nom du tag
+7 - état du git :
+    - git status
+    - git log
+
+#exercice : clonage de notre git personnel sur la machine
+#exercice : push modification du journal de bord et de l'exercice de la session d'introduction
+#perso : installation et configuration de powertop pour optimiser la vie de la batterie sur ubuntu
+#perso : modification du nom de fichier pour éviter les espaces et les majuscules
+
+
