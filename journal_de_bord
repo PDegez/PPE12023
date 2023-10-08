@@ -37,7 +37,7 @@ SEMAINE 2 : UTILISER GIT
 6 - ajout de tag (mettre en avant certains commits pour indiquer une étape importante)
     - git tag [-a] [-m message] <tagname> [commit]
     [-a] ajout d'un message
-    [commit] indique le commit à tagger (sinon, dernioer commit)
+    [commit] indique le commit à tagger (sinon, dernier commit)
 !! espace non accepté dans le nom du tag
 7 - état du git :
     - git status
@@ -48,6 +48,42 @@ SEMAINE 2 : UTILISER GIT
 #perso : installation et configuration de powertop pour optimiser la vie de la batterie sur ubuntu
 #perso : modification du nom de fichier pour éviter les espaces et les majuscules
 
-SEMAINE 3
+SEMAINE 3 : CORRIGER UNE ERREUR SUR GIT
 
-I AM ERROR
+3 états de git :
+    -> Modified means that you have changed the file but have not committed it to your database yet.
+    -> Staged means that you have marked a modified file in its current version to go into your next commit snapshot.
+    -> Committed means that the data is safely stored in your local database
+
+Deux moyens différents pour corriger des erreurs sur git :
+    - git reset : pour reset des commits non poussés (défaire les changements non partagés en ligne)
+            git reset HEAD~[N] :    annule des changements NON COMMITE
+            -> revient à la version -N du dépôt (par défaut, N=1, cad le commit parent)
+            -> répertoire inchangé
+            -> annule la mise en place (staging = liste de add)
+            git reset --soft HEAD~
+            -> revient à la version HEAD
+            -> répertoire inchangé
+            -> n'annule pas le staging
+            git reset --hard HEAD~
+            -> revient à la version HEAD
+            -> répertoire changé pour correspondre à la version HEAD
+            -> annule le staging
+            git reset <commit> (commit = un tag ou un identifiant commit)
+            -> revenir à un commit spécifique (soft et hard s'appliquent de la même façon)
+    - git revert <commit> : annuler des changements commités
+    crée un nouveau commit ou les changements sont annulés (conserve une trace des commits effectués)
+
+#Exercice : fichier "oups" avait été commit+push par erreur en cours. A été remove du git par la suite.
+#Exercice refait tel qu'il aurait dû avoir lieu :
+1 - fichier oups créé en local
+2 - fichier oups modifié à la place du journal en local
+3 - fichier oups commité
+4 - git revert git-seance3-init
+5 - copier coller modifications de oups dans journal de bord. Add ces changements
+6 - git commit -a -m "séance3, version finale des exercices de git"
+7 - push
+
+
+
+
