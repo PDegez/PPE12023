@@ -85,5 +85,46 @@ Deux moyens différents pour corriger des erreurs sur git :
 7 - push
 
 
+SEMAINE 4 : FLux,  Pipelines et Scripts
 
+Gestion par défaut du flux de données :
+-> stdin	standard input channel (defaut = clavier)
+-> stdout	standard output channel (defaut = écran)
+-> stderr	standard output channel for mistakes
+
+Les flux sont redirigeables :
+<	remplacer stdin par un fichier
+>	écrit stdout dans un fichier en écrasant le fichier d'origine
+>>	ecrit stdout dans un fichier en ajoutant au fichier d'origine
+2>	écrit stderr dans un fichier (écraser. Pour ajouter en fin de fichier, 2>>)
+>&	écrit stdout et stderr dans un fichier (écraser. Pour ajouter en fin de fichier : >>&)
+
+Les pipelines sont des enchainements de commandes séparées par un pipe |, tel que
+-> cmd1|cm2
+-> la commande 2 prend pour input l'output de la commande 1
+
+Quelques commandes utiles :
+-> grep (lancer une expression régulière pour extraire un motif)
+-> sort (trier les fichier. Attention, l'ordre par défaut est alphabétique)
+-> uniq (regroupe les entrées redondantes en une seule entrée préfacée par son nombre)
+-> cat (concatène le contenu des fichiers)
+-> wc (affiche le nombre de lignes, de mots et d'octet)
+-> echo (renvoie l'argument)
+
+
+Les scripts permettent de rendre executables des enchainements de commandes et pipelines
+-> commence par un shebang : #!/usr/bin/bash
+-> rendu exécutable par la commande chmod +x
+-> exécuté directement ou par la commande bash
+-> par defaut $1, $2, $3 indiquent les arguments et leur position attendue dans la commande
+-> bonne pratique : nommer explicitement la variable (ex: $1=FICHIER_URL)
+!pas d'espace autour du = en bash
+-> pour référencer la valeur de la variable, $NOM_VARIABLE (ex: $FICHIER_URL)
+
+#Exercice pipelines : slide 24, cours Shell: /exercices/exercice_pipelines
+#Exercices script : nom du script = resultat + a|aa|aaa (nombre d'argument) + arguments
+#slide 29, cours Shell: /exercices/locations_annee
+#slide 32, cours Shell:
+#Exercice 1: /exercices/count_entite_aa_entite_annee	/exercices/count_entite_trois_ans_a_entite
+#Exercice 2: /exercices/classement_location_aaa_annee_mois_nombre  
 
