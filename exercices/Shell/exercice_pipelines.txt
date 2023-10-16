@@ -1,0 +1,58 @@
+Exercices sur les pipelines - Slide 24 - PPT Shell Unix
+Comptez le nombre d'annotations par années
+Nombre d'annotations pour l'année 2016
+9442
+Nombre d'annotations pour l'année 2017
+7179
+Nombre d'annotations pour l'année 2018
+7561
+Nombre d'annotations Location pour l'année 2016 :
+3144
+Nombre d'annotations Location pour l'année 2017 :
+2466
+Nombre d'annotations Location pour l'année 2018 :
+3110
+Top 10 des lieux les plus cités en 2016 :
+    247 France
+    130 Burundi
+    105 Rio
+     82 Paris
+     73 États-Unis
+     47 Syrie
+     41 Russie
+     39 Allemagne
+     37 Canada
+     35 Montpellier
+Top 10 des lieux les plus cités en 2017 :
+    282 France
+     79 États-Unis
+     50 Syrie
+     50 Paris
+     37 Turquie
+     36 Russie
+     35 Italie
+     28 Irak
+     26 Europe
+     24 Royaume-Uni
+Top 10 des lieux les plus cités en 2018 :
+    174 France
+    165 Paris
+     76 Champs-Élysées
+     37 États-Unis
+     36 Russie
+     28 A9
+     24 A7
+     22 A8
+     21 Strasbourg
+     21 A62
+Top 10 des annotations les plus fréquentes pour le mois d'avril, toutes années confondues :
+     39 France
+     31 États-Unis
+     22 Cassini
+     15 EI
+     13 NASA
+     12 François Fillon
+     10 Pila
+     10 Paris
+     10 Mexique
+      9 Syrie
