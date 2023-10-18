@@ -51,26 +51,26 @@ SEMAINE 2 : UTILISER GIT
 SEMAINE 3 : CORRIGER UNE ERREUR SUR GIT
 
 3 états de git :
-    -> Modified means that you have changed the file but have not committed it to your database yet.
-    -> Staged means that you have marked a modified file in its current version to go into your next commit snapshot.
-    -> Committed means that the data is safely stored in your local database
+    - Modified means that you have changed the file but have not committed it to your database yet.
+    - Staged means that you have marked a modified file in its current version to go into your next commit snapshot.
+    - Committed means that the data is safely stored in your local database
 
 Deux moyens différents pour corriger des erreurs sur git :
     - git reset : pour reset des commits non poussés (défaire les changements non partagés en ligne)
             git reset HEAD~[N] :    annule des changements NON COMMITE
-            -> revient à la version -N du dépôt (par défaut, N=1, cad le commit parent)
-            -> répertoire inchangé
-            -> annule la mise en place (staging = liste de add)
+            - revient à la version -N du dépôt (par défaut, N=1, cad le commit parent)
+            - répertoire inchangé
+            - annule la mise en place (staging = liste de add)
             git reset --soft HEAD~
-            -> revient à la version HEAD
-            -> répertoire inchangé
-            -> n'annule pas le staging
+            - revient à la version HEAD
+            - répertoire inchangé
+            - n'annule pas le staging
             git reset --hard HEAD~
-            -> revient à la version HEAD
-            -> répertoire changé pour correspondre à la version HEAD
-            -> annule le staging
+            - revient à la version HEAD
+            - répertoire changé pour correspondre à la version HEAD
+            - annule le staging
             git reset <commit> (commit = un tag ou un identifiant commit)
-            -> revenir à un commit spécifique (soft et hard s'appliquent de la même façon)
+            - revenir à un commit spécifique (soft et hard s'appliquent de la même façon)
     - git revert <commit> : annuler des changements commités
     crée un nouveau commit ou les changements sont annulés (conserve une trace des commits effectués)
 
@@ -88,9 +88,9 @@ Deux moyens différents pour corriger des erreurs sur git :
 SEMAINE 4 : FLux,  Pipelines et Scripts
 
 Gestion par défaut du flux de données :
--> stdin	standard input channel (defaut = clavier)
--> stdout	standard output channel (defaut = écran)
--> stderr	standard output channel for mistakes
+- stdin		standard input channel (defaut = clavier)
+- stdout	standard output channel (defaut = écran)
+- stderr	standard output channel for mistakes
 
 Les flux sont redirigeables :
 <	remplacer stdin par un fichier
@@ -100,26 +100,26 @@ Les flux sont redirigeables :
 >&	écrit stdout et stderr dans un fichier (écraser. Pour ajouter en fin de fichier : >>&)
 
 Les pipelines sont des enchainements de commandes séparées par un pipe |, tel que
--> cmd1|cm2
--> la commande 2 prend pour input l'output de la commande 1
+- cmd1|cm2
+- la commande 2 prend pour input l'output de la commande 1
 
 Quelques commandes utiles :
--> grep (lancer une expression régulière pour extraire un motif)
--> sort (trier les fichier. Attention, l'ordre par défaut est alphabétique)
--> uniq (regroupe les entrées redondantes en une seule entrée préfacée par son nombre)
--> cat (concatène le contenu des fichiers)
--> wc (affiche le nombre de lignes, de mots et d'octet)
--> echo (renvoie l'argument)
+- grep (lancer une expression régulière pour extraire un motif)
+- sort (trier les fichier. Attention, l'ordre par défaut est alphabétique)
+- uniq (regroupe les entrées redondantes en une seule entrée préfacée par son nombre)
+- cat (concatène le contenu des fichiers)
+- wc (affiche le nombre de lignes, de mots et d'octet)
+- echo (renvoie l'argument)
 
 
 Les scripts permettent de rendre executables des enchainements de commandes et pipelines
--> commence par un shebang : #!/usr/bin/bash
--> rendu exécutable par la commande chmod +x
--> exécuté directement ou par la commande bash
--> par defaut $1, $2, $3 indiquent les arguments et leur position attendue dans la commande
--> bonne pratique : nommer explicitement la variable (ex: $1=FICHIER_URL)
+- commence par un shebang : #!/usr/bin/bash
+- rendu exécutable par la commande chmod +x
+- exécuté directement ou par la commande bash
+- par defaut $1, $2, $3 indiquent les arguments et leur position attendue dans la commande
+- bonne pratique : nommer explicitement la variable (ex: $1=FICHIER_URL)
 !pas d'espace autour du = en bash
--> pour référencer la valeur de la variable, $NOM_VARIABLE (ex: $FICHIER_URL)
+- pour référencer la valeur de la variable, $NOM_VARIABLE (ex: $FICHIER_URL)
 
 #Exercice pipelines : slide 24, cours Shell: /exercices/exercice_pipelines
 #Exercices script : nom du script = resultat + a|aa|aaa (nombre d'argument) + arguments
