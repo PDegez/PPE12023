@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 #script qui donne le nombre d'entité par année pour les 3 années du fichiers triés (cours shell)
+
 ENTITE=$1
 
 #Vérification du nombre d'arguments
@@ -10,10 +11,13 @@ then
     exit
 fi
 
-#Script boucle du script count_entite_aa_entite_annee.sh
-ANNEE=2016
-while [ -d ~/Documents/Cours/PPE/fichiers_tries/ann/$ANNEE ]
+DOSSIER_ANNEE=$(ls ~/Documents/Cours/PPE/fichiers_tries/ann)
+ANNEE=$ANNEE
+
+#prendre la liste du dossier comme une liste d'élément pour une boucle
+for ANNEE in $DOSSIER_ANNEE
 do
-    bash count_entite_aa_entite_annee.sh $1 $ANNEE
-    ANNEE=$(expr $ANNEE + 1)
+	bash ~/Documents/Cours/PPE/git/DG_ppe/exercices/Shell/count_entite_aa_entite_annee.sh $1 $ANNEE
 done
+
+echo "fin du programme"
