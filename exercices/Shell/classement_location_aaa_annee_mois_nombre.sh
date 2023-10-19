@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+#Version commit
 
 #Créer un script pour établir le classement des lieux les plus cités. Prendre en argument l'année, le mois et le nombre de lieux à afficher. Accepter * pour l'année et le mois.
 

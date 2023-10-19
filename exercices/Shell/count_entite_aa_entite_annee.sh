@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+#Version commit
 
 #script qui donne le nombre d'entité par année pour les fichiers triés (cours shell)
 ENTITE=$1
