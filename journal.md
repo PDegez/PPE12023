@@ -128,3 +128,43 @@ Les scripts permettent de rendre executables des enchainements de commandes et p
 #Exercice 1: /exercices/count_entite_aa_entite_annee	/exercices/count_entite_trois_ans_a_entite
 #Exercice 2: /exercices/classement_location_aaa_annee_mois_nombre  
 
+
+SEMAINE 5 : Conditions, Boucles et Lynx
+
+1) rediger des instructions de contrôle pour les scripts : if + condition
+- vérifier que le nombre d'arguments entrés est conforme à celui attendu
+- interrompre le script et faire un feedback à l'utilisateur en cas de non conformité (exit / echo)
+2) syntaxe des conditions : if [condition]. Le script vérifie que la condition est vraie:
+-> sur les chemins :
+- -f <fichier> vraie si <fichier> existe ( -s si il existe et n'est pas vide)
+- -d <dossier> vraie si <dossier> existe
+-> sur les chaines
+- -n <chaine> vraie si la chaine n'est pas vide (-z si elle est vide : ex argument non fourni)
+- égalité ou différence = !=
+- ordre alphabétique > <
+-> sur les entiers
+- a -eq b (equal)
+- a -ne	b (not equal)
+- a -lt b (less than)
+- a -gt b (greater than)
+- a -le b (less or equal)
+- a -ge	b (greater or equal)
+-> regex
+if [[$1 =~ <regex> ]]
+3) les boucles : similaire à python mais il faut indiquer la FIN de la boucle également
+- boucle for :
+for x in y
+do
+	something
+done
+- boucle en while
+while [condition]
+do
+	something
+done
+#Exercices: ajouter vérification aux scripts de la séance 4.
+!! jusqu'à présent, j'ai opté pour des chemins absolus dans les scripts afin de pouvoir potentiellement les déplacer sans problèmes, mais si l'objectif est de les partager (et de les rendre emboitables), il faudra sans doute revenir sur des chemins relatifs du type ./ qui sont exécutables sur n'importe quelle machine du moment que toutes les données manipulées sont dans le même dossier.
+!! projet : discussion du mot à choisir avec Siman et Alix. Plusieurs possibilités en discussion : religion, vaccin, handicap etc. Nous essayons de favoriser des sujets qui peuvent déclencher des opinions tranchées dans les co-textes.
+
+
+
