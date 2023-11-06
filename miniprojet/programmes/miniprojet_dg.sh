@@ -38,15 +38,32 @@ lineno=1
 while read -r line
 do
 	url=$line
+
+	#Récupérer la réponse serveur
 	reponse=$(curl -I -s $url|grep -P HTTP|grep -P -o [[:digit:]]{3})
-	encodage=$(curl -I -s $url|grep -P -o "charset=.*\b"|grep -v \"|cut -d = -f 2)
+
+	#Récupération de l'encodage
+	encodage=$(curl -I -s $url|grep -P -o "charset=.*\b"|cut -d = -f 2)
 	echo -e "${lineno}\t${url}\t${reponse}\t${encodage}"
+
+	#Incrément boucle while
 	lineno=$(expr $lineno + 1)
+
 done < "./urls_corrigees.txt" > "../tableaux/tableau-fr.txt"
 
 #Suppression du fichier temporaire de travail
 rm "./urls_corrigees.txt"
 
-#Message de status
-echo "le tableau a été créé à l'emplacement /miniprojet/tableaux/tableau-fr.txt"
+#Annonce des problèmes serveur
+lineno=1
+while read -r line
+do
+if ! [[ $line =~ 200 ]]
+then
+	echo -e "l'url suivante pose problème :\n $line"
+fi
+lineno=$(expr $lineno + 1)
+done < "../tableaux/tableau-fr.txt"
 
+#Message d'information chemin de l'output
+echo "le tableau a été créé à l'emplacement /miniprojet/tableaux/tableau-fr.txt"

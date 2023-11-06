@@ -131,40 +131,83 @@ Les scripts permettent de rendre executables des enchainements de commandes et p
 
 SEMAINE 5 : Conditions, Boucles et Lynx
 
-1) rediger des instructions de contrôle pour les scripts : if + condition
-- vérifier que le nombre d'arguments entrés est conforme à celui attendu
-- interrompre le script et faire un feedback à l'utilisateur en cas de non conformité (exit / echo)
-2) syntaxe des conditions : if [condition]. Le script vérifie que la condition est vraie:
--> sur les chemins :
-- -f <fichier> vraie si <fichier> existe ( -s si il existe et n'est pas vide)
-- -d <dossier> vraie si <dossier> existe
--> sur les chaines
-- -n <chaine> vraie si la chaine n'est pas vide (-z si elle est vide : ex argument non fourni)
-- égalité ou différence = !=
-- ordre alphabétique > <
--> sur les entiers
-- a -eq b (equal)
-- a -ne	b (not equal)
-- a -lt b (less than)
-- a -gt b (greater than)
-- a -le b (less or equal)
-- a -ge	b (greater or equal)
--> regex
-if [[$1 =~ <regex> ]]
-3) les boucles : similaire à python mais il faut indiquer la FIN de la boucle également
-- boucle for :
-for x in y
-do
-	something
-done
-- boucle en while
-while [condition]
-do
-	something
-done
+1 - rediger des instructions de contrôle pour les scripts : if + condition
+    - vérifier que le nombre d'arguments entrés est conforme à celui attendu
+    - interrompre le script et faire un feedback à l'utilisateur en cas de non conformité (exit / echo)
+2 - syntaxe des conditions : if [condition]. Le script vérifie que la condition est vraie:
+    -> sur les chemins :
+        - -f <fichier> vraie si <fichier> existe ( -s si il existe et n'est pas vide)
+        - -d <dossier> vraie si <dossier> existe
+    -> sur les chaines
+        - -n <chaine> vraie si la chaine n'est pas vide (-z si elle est vide : ex argument non fourni)
+        - égalité ou différence = !=
+        - ordre alphabétique > <
+    -> sur les entiers
+        - a -eq b (equal)
+        - a -ne	b (not equal)
+        - a -lt b (less than)
+        - a -gt b (greater than)
+        - a -le b (less or equal)
+        - a -ge	b (greater or equal)
+    -> regex
+        if [[$1 =~ <regex> ]]
+3 - les boucles : similaire à python mais il faut indiquer la FIN de la boucle également
+    - boucle for :
+        for x in y
+            do
+                something
+            done
+    - boucle en while
+        while [condition]
+        do
+            something
+        done
+4 - lynx : navigateur web dans le terminal. Navigation avec les touches directionnelles (haut bas = défiler, droite gauche = arborescence)
+5 - curl : extraire du contenu web.
+    -i : donne retour serveur
+    -I : même chose sans le html
+    -s : supprime la barre de chargement
+    -o : indique un fichier de sortie
+    -L : suit les redirections
+6 - retour serveur :
+    100 : information
+    200 : réussite
+    300 : redirection
+    400 : erreur client
+    500 : erreur serveur
 #Exercices: ajouter vérification aux scripts de la séance 4.
 !! jusqu'à présent, j'ai opté pour des chemins absolus dans les scripts afin de pouvoir potentiellement les déplacer sans problèmes, mais si l'objectif est de les partager (et de les rendre emboitables), il faudra sans doute revenir sur des chemins relatifs du type ./ qui sont exécutables sur n'importe quelle machine du moment que toutes les données manipulées sont dans le même dossier.
 !! projet : discussion du mot à choisir avec Siman et Alix. Plusieurs possibilités en discussion : religion, vaccin, handicap etc. Nous essayons de favoriser des sujets qui peuvent déclencher des opinions tranchées dans les co-textes.
+
+SEMAINE 6 + BREAK :
+
+1 - en cours:
+travail sur miniprojet : script bash pour extraire une liste d'url, leur retour serveur et leur encodage sous forme de données tabulées.
+Utilisation de curl/grep/cut/
+Nouvelle option de echo : -e
+-> utilisation des expressions régulières (ex : \t pour tabulation)
+2 - à la maison :
+commande sed : entre autre = remplacer des caractères ou chaines de caractère (! travaille sur un fichier)
+syntaxe : sed -i "s/car_a_remplacer/car_de_remplacement/g" fichiersortie
+3 - organiser le git selon l'arborescence demandée = done
+4 - Finir le script = done
+utilisation de sed pour résoudre le problème de l'url écrite "Leonard" au lien de "Léonard"
+!! cette façon de faire est spécifique à ce problème unique
+!! sed travaille directement sur le fichier. Il faut travailler sur un fichier intermédiaire "url_corrigées" si l'on veut garder le fichier brut d'origine intact (et le supprimer en fin de script ). Il doit exister une façon plus élégante de faire cela.
+ajout d'un retour script qui informe l'utilisateur des urls problématiques en fonction du retour serveur
+#script : miniprojet_dg.sh
+4 - Projet :
+    - réunion avec Alix et Siman.
+    Choix du mot presque final : jeux vidéo ou alcool
+    !! jeux vidéo est un mot composé en anglais et français. Probleme ?
+    répartition des langues :
+    Alix = français
+    Pauline = anglais
+    Siman = chinois (précision à faire)
+    - Alix propose de faire le git à partir du sien (partager un dossier de son git sur lequel nous aurions les droits d'écriture)
+    !! demander en cours si cela est possible ou si il est préférable de refaire un git indépendant.
+
+
 
 
 
