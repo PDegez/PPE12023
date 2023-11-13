@@ -208,6 +208,19 @@ ajout d'un retour script qui informe l'utilisateur des urls problématiques en f
     !! demander en cours si cela est possible ou si il est préférable de refaire un git indépendant.
 
 
+SEMAINE 7 - Miniprojet suite + HTML
 
+1 - correction du miniprojet (utilisation de curl -L (redirection) et -w (extraction info entre %{}, par exemple -w %{content_type}
+2 - présentation du html. Système de balises
+-> pas de difficulté ici, je les utilisais sur les forums à l'époque où c'était la seule façon d'incorporer de la mise en page dans les commentaires
+3 - un tableau en html = une série de balise (tableau / header / corps / lignes )
+4 - une balise pour les liens clicable : <a href=url> texte à afficher </a>
+5 - exercices à rendre :
+#exercice 1 = traitement_texte.sh
+#exercice 2 = freq_mot.sh
+#exercice 3 = freq_bigramme.sh
+6 - Projet : mot fixé = jeux vidéo.
+7 - Projet : récupération des urls commencée
+?? Comment faire pour qu'un script prenne un argument a.yolo et rende de façon scriptée un fichier a_modifie.yolo ? j'ai réussi à expérimenter un peu avec des scripts simples, mais impossible d'utiliser une variable dans l'adresse fichier après > dans le script (ou alors je fais un truc mal)
 
 
