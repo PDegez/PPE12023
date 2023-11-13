@@ -220,7 +220,8 @@ SEMAINE 7 - Miniprojet suite + HTML
 #exercice 2 = freq_mot.sh
 #exercice 3 = freq_bigramme.sh
 6 - Projet : mot fixé = jeux vidéo.
-7 - Projet : récupération des urls commencée
+7 - Projet : récupération des urls effectuée
+?? Majoritairement des urls de journaux et de wikipedia. Problem?
 ?? Comment faire pour qu'un script prenne un argument a.yolo et rende de façon scriptée un fichier a_modifie.yolo ? j'ai réussi à expérimenter un peu avec des scripts simples, mais impossible d'utiliser une variable dans l'adresse fichier après > dans le script (ou alors je fais un truc mal)
 
 
