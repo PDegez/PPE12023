@@ -27,7 +27,7 @@ do
 	#récupération encodage
 	encodage=$(curl -I -s -L -w "%{content_type}" -o /dev/null $URL | grep -P -o "charset=\S+" | cut -d = -f 2)
 
-	#ligne en html : lineno | URL (cliquable : <a href="urls"> url </a>) | reponse
+	#ligne en html : lineno | URL (cliquable : <a href="urls"> texte à cliquer </a>) | reponse
 	echo -e "\t\t<tr>\n\t\t\t<td>$lineno</td>\n\t\t\t<td><a href='$URL'>$URL</a></td>\n\t\t\t<td>$reponse</td>\n\t\t\t<td>$encodage</td>\n\t\t</tr>"
 
 	#incrément boucle

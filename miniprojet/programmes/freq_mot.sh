@@ -22,4 +22,6 @@ then
 else
     classement=$(bash ./traitement_texte.sh $1 | sort -i | uniq -c | sort -n -r | head -n $2)
 fi
+
+#retour resultat stdout
 echo "$classement"
