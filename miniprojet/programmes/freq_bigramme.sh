@@ -1,4 +1,4 @@
-#!usr/bin/bash
+##!usr/bin/bash
 
 fichier=$1
 nombre=$2
@@ -22,10 +22,15 @@ echo -e "\n$texte" > ./temp1.txt
 #creation et classement des bigrammes
 if [ -z $2 ]
 then
-    freq_bigram=$(paste ./temp1.txt ./temp2.txt | tr "\t" " " | sort -i | uniq -c | sort -n -r | head -n 25 )
-else
-    freq_bigram=$(paste ./temp1.txt ./temp2.txt | tr "\t" " " | sort -i | uniq -c | sort -n -r | head -n $2 )
+    nombre=25
 fi
+
+if ! [[ $nombre =~ ^0*[1-9][0-9]* ]]
+then
+    echo "le deuxième argument doit être vide ou un nombre entier"
+fi
+
+freq_bigram=$(paste ./temp1.txt ./temp2.txt | tr "\t" " " | sort -i | uniq -c | sort -n -r | head -n $nombre )
 
 #retour resultat stdout
 echo "$freq_bigram"
