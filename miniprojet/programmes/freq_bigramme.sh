@@ -1,4 +1,4 @@
-##!usr/bin/bash
+#!usr/bin/bash
 
 fichier=$1
 nombre=$2
@@ -7,11 +7,13 @@ nombre=$2
 if [ $# -lt 1 ]
 then
     echo "Ce script a besoin d'au moins un argument pour fonctionner"
+    exit
 fi
 
 if ! [ -s $1 ]
 then
     echo "Ce script prend un fichier texte non vide en premier argument"
+    exit
 fi
 
 #appel du script traitement_texte, travail dans 2 fichiers temporaires
@@ -28,6 +30,7 @@ fi
 if ! [[ $nombre =~ ^0*[1-9][0-9]* ]]
 then
     echo "le deuxième argument doit être vide ou un nombre entier"
+    exit
 fi
 
 freq_bigram=$(paste ./temp1.txt ./temp2.txt | tr "\t" " " | sort -i | uniq -c | sort -n -r | head -n $nombre )

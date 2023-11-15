@@ -7,12 +7,14 @@ nombre=$2
 if [ $# -lt 1 ]
 then
     echo "ce script a besoin d'au moins un argument pour fonctionner."
+    exit
 fi
 
 #vérification argument = fichier non vide
 if ! [ -s $1 ]
 then
     echo "le premier argument du script doit être un fichier texte non vide."
+    exit
 fi
 
 #condition pour argument optionnel + script traitement + classement
