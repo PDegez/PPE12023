@@ -18,10 +18,18 @@ fi
 #condition pour argument optionnel + script traitement + classement
 if [ -z $2 ]
 then
-    classement=$(bash ./traitement_texte.sh $1 | sort -i | uniq -c | sort -n -r| head -n 25)
-else
-    classement=$(bash ./traitement_texte.sh $1 | sort -i | uniq -c | sort -n -r | head -n $2)
+    nombre=25
 fi
+
+#vérification $2 = entier positif
+if ! [[ $nombre =~ ^0*[1-9][0-9]*$ ]]
+then
+    echo "L'argument 2 doit être vide ou un entier positif"
+    exit
+fi
+
+classement=$(bash ./traitement_texte.sh $1 | sort -i | uniq -c | sort -n -r | head -n $nombre)
 
 #retour resultat stdout
 echo "$classement"
+
