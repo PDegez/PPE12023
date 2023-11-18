@@ -225,3 +225,18 @@ SEMAINE 7 - Miniprojet suite + HTML
 ?? Comment faire pour qu'un script prenne un argument a.yolo et rende de façon scriptée un fichier a_modifie.yolo ? j'ai réussi à expérimenter un peu avec des scripts simples, mais impossible d'utiliser une variable dans l'adresse fichier après > dans le script (ou alors je fais un truc mal)
 
 
+SEMAINE 8 - Miniprojet HTML et BULMA
+
+1 - correction des scripts :
+ - plutôt que d'éliminer la ponctuation, puis les guillemets etc, il est plus simple de grep -o les caractères alphanumériques latins :
+	grep -P -o \p{Latin}+
+ - lorsque l'on passe des majuscules aux miniscules, rajouter un tr pour s'occuper des caractères diacrités ([:upper:][:lower:] marche sur ASCII)
+	tr "ÉÈÀ" "éèà"
+ - vérifier qu'un argument est non seulement non nul, mais également qu'il est un entier positif :
+	if ![[ $nombre =~ ^0*[1-9][0-9]*$ ]]
+2 - format Bulma : travail sur un fichier .css qui sert de feuille de style personnalisée (possibilité d'enrichir et modifier les css déjà existants)
+3 - git peut générer une page web liée à notre dépôt, à partir d'un fichier html (et css si on utilise bulma) présent dans le dépôt
+#exercice = créer une page html qui utilise bulma et link vers le tableau html des urls du projets
+4 - Projet : dépôt de groupe en place : https://github.com/ASVienot/ppe_videogame
+5 - Répertoire du projet cloné sur les machines
+?? un petit topo sur les environnements serait le bienvenu (pour l'instant ce que je sais tiens surtout du système D et des copains).
