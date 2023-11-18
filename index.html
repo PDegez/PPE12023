@@ -1,45 +1,55 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<title>Programmation et Projet encadré</title>
-	</head>
-
-	<body>
-		<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Collage_of_Six_Cats-02.jpg" alt="Les chats domineront le monde." title="Les chats domineront le monde. Source de l'image : Wikipedia, licence CC BY-NC-SA 3.0" style="max-width: 50%; height: auto;">
-
-		<h1>Entête de niveau 1</h1> <!-- Comme les logiciels de traitements de texte, on a des titres de différents niveaux, de 1 à 6 -->
-
-		<!-- La balise <p> permet de créer des paragaphes, où doit aller la majorité du texte. -->
-		<p>Du texte dans un paragraphe.</p>
-		<p>Le paragraphe d’après.</p>
-
-		<p>
-			Un lien : <a href="www.perdu.com">Cliquer ici.</a> <!-- la balise <a></a> permet d’ajouter des (hyper)liens. -->
-		</p>
-		
-		<p>La balise <b>b</b> permet de mettre du texte en gras.</p>
-		<p>La balise <i>i</i> permet de mettre du texte en italique.</p>
-		<p>La balise <em>em</em> permet de mettre du texte en emphase.</p>
-		<p>La balise <strong>strong</strong> permet de mettre du texte en avant.</p>
-		
-		<ul> <!-- ul pour les liste à point -->
-			<li>élément 1</li>
-			<li>élément B</li>
-		</ul>
-
-		<ol> <!-- ol pour les liste numérotées -->
-			<li>élément 1</li>
-			<li>élément B</li>
-		</ol>
-
-		<p>Écrire certains caractères demande des entités HTML :</p>		
-		<ul> 
-			<li><i>&amp;amp;</i> pour écrire &amp;</li>
-			<li><i>&amp;lt;</i> pour écrire &lt;</li>
-			<li><i>&amp;gt;</i> pour écrire &gt;</li>
-		</ul>
-
-		<!-- on peut insérer du CSS directement dans la balise pour en changer le style -->
-		<p style="color:red; background-color:black;">Paragraphe rouge sur fond noir.</p>
-	</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1”>
+    <title>Projet Degez essai Bulma</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body class="has-background-primary-light">
+  <section>
+    <div>
+      <h1 class="title has-text-danger has-text-centered is-boxed">
+		<img src="banniere.jpg" width="100%">
+        <br>
+        Mini projet
+      </h1>
+      <p class="subtitle has-text-centered">
+        D'une liste d'urls à un fichier html fonctionnel</p>
+        <br>
+    </div>
+    <div class="block has-text-centered">
+		<h2 class="text is-size-4"> <strong> Step by step </strong> </h2>
+	</div>
+    <div class="container">
+		<div class="columns is-centered">
+          <div class="text is-size-5">
+			<ol>
+				<li>récupérer des urls et les enregistrer dans un .txt</li>
+				<li>
+				<details>
+				<summary>
+				écrire un script bash pour lire les urls
+				<span></span>
+				</summary>
+					<ul class="text is-size-6">
+						<li>ouvrir les urls avec curl</li>
+						<li>extraire les retours serveur et les encodages</li>
+						<li>renvoyer ces informations sous forme de données tabulées</li>
+					</ul>
+                </li>
+                </details>
+				<li>écrire un script bash pour transformer les données tabulées en tableau htlm</li>
+				<li>génerer un site sur github à partir d'un document html</li>
+				<li>faire du tableau html une page secondaire liée à la page d'accueil du site</li>
+			</ol>
+          </div>
+		</div>
+    <br>
+    </div>
+    <div class="container has-text-centered has-background-primary-light">
+    <a class="button is-link is-hovered" href="miniprojet/tableaux/urls.html">tableau html</a>
+    </div>
+  </section>
+  </body>
 </html>
