@@ -240,3 +240,28 @@ SEMAINE 8 - Miniprojet HTML et BULMA
 4 - Projet : dépôt de groupe en place : https://github.com/ASVienot/ppe_videogame
 5 - Répertoire du projet cloné sur les machines
 ?? un petit topo sur les environnements serait le bienvenu (pour l'instant ce que je sais tiens surtout du système D et des copains).
+
+SEMAINE 9 - PROJET 1
+
+1 - Aspiration de page avec curl
+- réutilisation et modification des scripts perso
+- input : fichier URLs .txt
+- output : 1 fichier . html par url dans le dossier aspirations
+2 - dump_text avec lynx
+- lynx -dump (dump txt)
+- lynx -nolist (dégage les urls parasites)
+- script en local à partir des aspirations
+- 1 fichier .txt par fichier .html dans le dossier aspiration
+3 - Contexte
+- utilisation de grep
+- grep -A N 	motif + N lignes après
+- grep -B N	motoif + N lignes avant
+- 1 fichier txt par dumps-text
+- script universel (prend les 3 langues grace à des conditions if)
+4 - Tableau
+- input : fichier . txt liste url
+- output : fichier .html (tableau : ID/url/reponse/encodage/NB/aspiration.html/dump-text.txt/contexte.txt)
+- utilisation de conditions  if :  un seul script unique pour toutes les langues
+
+Urls EN : 50 (pas toutes okay niveau réponse serveur)
+-> enrichir pour la prochaine fois
